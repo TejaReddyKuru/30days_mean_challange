@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id ="parent">
+        <h4>Parent</h4>
+        <div id ="child"></div>
+            <h4>child</h4>
+    </div>
+<script>
+    let parent = document.getElementById("parent");
+    let child = document.getElementById("child");
+    parent.addEventListener("click",()=>{
+        alert("parent clicked");
+    })
+    child.addEventListener("click",()=>{
+        alert("child clicked");
+    })
+</script>
+</body>
+</html> // bottom up invoked 
+//eventbubbling :When an event occurs on an element, it first executes on the target element and then moves upward through its parent elements until it reaches the document.

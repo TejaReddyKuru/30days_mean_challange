@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input type="text" id="search">
+    <button id="btn">Go</button>
+
+    <script>
+        function debounce(fn, delay) {
+            let timer;
+            return function() {
+                clearTimeout(timer);
+                setTimeout(() => {
+                    fn();
+                }, delay);
+            };
+        }
+        function search() {
+            console.log("API CALL:", document.getElementById("search").value);
+        }
+        const searchInput = document.getElementById("search");
+        searchInput.addEventListener("keydown", debounce(search, 0));
+    </script>
+</body>
+</html>
